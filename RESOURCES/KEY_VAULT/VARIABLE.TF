@@ -1,8 +1,8 @@
 
 
-variable "key_vault" {
+variable "key_vault1" {
   type = map(object({
-    key_vault_name      = string
+    keyvault_name      = string
     location            = string
     resource_group_name = string
   }))

@@ -1,16 +1,16 @@
 
 
-resource_groups = {
+rgs1 = {
   rg1 = {
     resource_group_name = "Resource_Group_1"
-    location            = "centralindia"
+    location            = "eastus"
   }
 }
 
-virtual_net = {
+virtual_net1 = {
   VM1 = {
     vnet_name           = "Virtual_Network"
-    location            = "centralindia"
+    location            ="eastus"
     resource_group_name = "Resource_Group_1"
     address_space       = ["10.0.0.0/16"]
 
@@ -27,20 +27,20 @@ virtual_net = {
   }
 }
 
-virtual_vm = {
+virtual_vm1 = {
   vm1 = {
-    vm_name             = "FRONTEND_VM"
+    vm_name             = "FRONTEND-VM"
     resource_group_name = "Resource_Group_1"
-    location            = "centralindia"
+    location            = "eastus"
     size                = "Standard_B2s"
     admin_username      = "devopsadminuser"
     admin_password      = "AdminPassword123!"
     nic_name            = "FRONTEND_NIC"
   }
   vm2 = {
-    vm_name             = "BACKEND_VM"
+    vm_name             = "BACKEND-VM"
     resource_group_name = "Resource_Group_1"
-    location            = "centralindia"
+    location            = "eastus"
     size                = "Standard_B2s"
     admin_username      = "devopsadminuser"
     admin_password      = "AdminPassword123!"
@@ -48,43 +48,43 @@ virtual_vm = {
   }
 }
 
-pip = {
+pip1 = {
   vm1 = {
     public_ipname       = "FRONTEND_PUBLIC_IP"
     resource_group_name = "Resource_Group_1"
-    location            = "centralindia"
+    location            = "eastus"
     allocation_method   = "Static"
   }
   vm2 = {
     public_ipname       = "BACKEND_PUBLIC_IP"
     resource_group_name = "Resource_Group_1"
-    location            = "centralindia"
+    location            = "eastus"
     allocation_method   = "Static"
   }
 }
 
-nsg = {
+nsg1 = {
   vm1 = {
     nsg_name            = "FRONTEND_NSG"
-    location            = "centralindia"
+    location            = "eastus"
     resource_group_name = "Resource_Group_1"
   }
   vm2 = {
     nsg_name            = "BACKEND_NSG"
-    location            = "centralindia"
+    location            ="eastus"
     resource_group_name = "Resource_Group_1"
   }
 }
 
 
-NIC = {
+NIC1 = {
   vm1 = {
     nic_name            = "FRONTEND_NIC"
-    location            = "centralindia"
+    location            = "eastus"
     resource_group_name = "Resource_Group_1"
-    subnet_name         = "Frontend_subnet"
     public_ip_name      = "FRONTEND_PUBLIC_IP"
-
+    subnet_name         = "Frontend_subnet"
+     vnet_name           = "Virtual_Network"
     ip_configuration = {
       ip1 = {
         name                          = "Internal"
@@ -94,10 +94,11 @@ NIC = {
   }
   vm2 = {
     nic_name            = "BACKEND_NIC"
-    location            = "centralindia"
+    location            = "eastus"
     resource_group_name = "Resource_Group_1"
-    subnet_name         = "Backend_subnet"
     public_ip_name      = "BACKEND_PUBLIC_IP"
+    subnet_name         = "Backend_subnet"
+     vnet_name           = "Virtual_Network"
     ip_configuration = {
       ip2 = {
         name                          = "Internal"
@@ -109,23 +110,23 @@ NIC = {
 
 
 
-key_vault= {
-  key_vault={
-    key_vault_name      = "DEV_VM_KEY_VAULT"
-    location            = "central_india"
+key_vault1 = {
+  key_vault = {
+    keyvault_name       = "Ddevkeyvault"
+    location            = "eastus"
     resource_group_name = "Resource_Group_1"
   }
 }
 
-security={
-  vm1={
-    nic_name="FRONTEND_NIC"
-    nsg_name= "FRONTEND_NSG"
-    resource_group_name=
+security1 = {
+  vm1 = {
+    nic_name            = "FRONTEND_NIC"
+    nsg_name            = "FRONTEND_NSG"
+    resource_group_name = "Resource_Group_1"
   }
-  vm2={
-    nic_name="BACKEND_NIC"
-    nsg_name="BACKEND_NSG"
-    resource_group_name="Resource_Group_1"
+  vm2 = {
+    nic_name            = "BACKEND_NIC"
+    nsg_name            = "BACKEND_NSG"
+    resource_group_name = "Resource_Group_1"
   }
 }

@@ -1,6 +1,6 @@
 
 
-variable "nsg" {
+variable "nsg1" {
     type = map(object({
     nsg_name=string
     location=string

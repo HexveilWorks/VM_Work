@@ -2,7 +2,7 @@
 
 resource "azurerm_virtual_network" "vnet" {
 
-for_each = var.virtual_net
+for_each = var.virtual_net1
 
   name                = each.value.vnet_name
   location            = each.value.location
@@ -11,7 +11,7 @@ for_each = var.virtual_net
  
 
   dynamic "subnet" {
-    for_each = each.value.subnets
+    for_each = each.value.subnet
     content {
       name             = subnet.value.name
       address_prefixes = subnet.value.address_prefixes

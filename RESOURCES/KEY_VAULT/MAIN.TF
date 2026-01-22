@@ -1,9 +1,9 @@
 
 
-resource "azurerm_key_vault" "example" {
-    for_each = var.key_vault
+resource "azurerm_key_vault" "key" {
+    for_each = var.key_vault1
     
-  name                        = each.value.key_vault_name
+  name                        = each.value.keyvault_name
   location                    = each.value.location
   resource_group_name         = each.value.resource_group_name
   enabled_for_disk_encryption = true

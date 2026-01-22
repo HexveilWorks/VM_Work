@@ -1,5 +1,5 @@
 
-variable "pip" {
+variable "pip1" {
   type = map(object({
     public_ipname       = string
     resource_group_name = string

@@ -7,12 +7,11 @@ terraform {
       version = "4.57.0"
     }
   }
-
   backend "azurerm" {
-    resource_group_name  = " pipeline_rg"
-    storage_account_name = "pipeline99storage"
-    container_name       = "pipelinecontainer"
-    key                  = "terraform.tfstate"
+    resource_group_name  = ""
+    storage_account_name =""
+    container_name       = ""
+    key                  = ""
   }
 }
 

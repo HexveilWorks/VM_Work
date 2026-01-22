@@ -1,6 +1,6 @@
 
 
-variable "virtual_vm" {
+variable "virtual_vm1" {
   type = map(object({
     vm_name             = string
     resource_group_name = string

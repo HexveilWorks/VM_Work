@@ -1,7 +1,7 @@
 
 
 resource "azurerm_public_ip" "public_ip" {
-    for_each = var.pip
+    for_each = var.pip1
 
   name                = each.value.public_ipname
   resource_group_name = each.value.resource_group_name
