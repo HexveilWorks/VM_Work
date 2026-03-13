@@ -12,5 +12,14 @@ jobs:
     steps:
       - name: my first terraform init 
         run: echo hello world
-        
+
+      - name: Azure Login
+        uses: Azure/login@v2.3.0
+        with:
+          creds: ${{ secrets.SECRETS}}
+
+      - name: init
+        run: terraform init  
+        working-directory: ENVIORNMENT/DEV
+    
     
