@@ -1,0 +1,16 @@
+name: my first workflow
+
+on:
+  workflow_dispatch: 
+
+jobs:
+  terraform_init:
+    name: Terraform init task 
+    runs-on: self-hosted
+    permissions: 
+      contents: read
+    steps:
+      - name: my first terraform init 
+        run: echo hello world
+        
+    
